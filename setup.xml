@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputs>
+	<input>
+		<id>name_entry</id>
+		<type>text</type>
+		<label>Name:</label>
+	</input>
+	<input>
+		<id>console_entry</id>
+		<type>select</type>
+		<label>Console:</label>
+		<options>
+			<option>
+				<value>ANY</value>
+				<option_label>Any</option_label>
+			</option>
+			<option>
+				<value>GB</value>
+				<option_label>Gameboy</option_label>
+			</option>
+			<option>
+				<value>GBA</value>
+				<option_label>Gameboy Advance</option_label>
+			</option>
+			<option>
+				<value>GBC</value>
+				<option_label>Gameboy Color</option_label>
+			</option>
+			<option>
+				<value>3DS</value>
+				<option_label>Nintendo 3DS</option_label>
+			</option>
+			<option>
+				<value>DS</value>
+				<option_label>Nintendo DS</option_label>
+			</option>
+			<option>
+				<value>NES</value>
+				<option_label>Nintendo Entertainment System</option_label>
+			</option>
+			<option>
+				<value>GCN</value>
+				<option_label>Nintendo Gamecube</option_label>
+			</option>
+			<option>
+				<value>WII</value>
+				<option_label>Nintendo Wii</option_label>
+			</option>
+			<option>
+				<value>WIIU</value>
+				<option_label>Nintendo WiiU</option_label>
+			</option>
+			<option>
+				<value>PC</value>
+				<option_label>PC</option_label>
+			</option>
+			<option>
+				<value>PS</value>
+				<option_label>Sony Playstation</option_label>
+			</option>
+			<option>
+				<value>PS2</value>
+				<option_label>Sony Playstation 2</option_label>
+			</option>
+			<option>
+				<value>PS3</value>
+				<option_label>Sony Playstation 3</option_label>
+			</option>
+			<option>
+				<value>PSP</value>
+				<option_label>Sony Playstation Portable</option_label>
+			</option>
+			<option>
+				<value>SNES</value>
+				<option_label>Super Nintendo</option_label>
+			</option>
+			<option>
+				<value>XBOX</value>
+				<option_label>Xbox</option_label>
+			</option>
+		</options>
+	</input>
+	<input>
+		<id>year_entry</id>
+		<type>text</type>
+		<label>Year of Release:</label>
+	</input>
+	<input>
+		<id>owned_box</id>
+		<type>radio</type>
+		<label>Owned:</label>
+		<rbuttons>
+			<rbutton>
+				<radio_label>Yes</radio_label>
+				<value>yes</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>No</radio_label>
+				<value>no</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>Any</radio_label>
+				<value>any</value>
+				<checked>true</checked>
+			</rbutton>
+		</rbuttons>
+	</input>
+	<input>
+		<id>special_edition_box</id>
+		<type>radio</type>
+		<label>Special Edition:</label>
+		<rbuttons>
+			<rbutton>
+				<radio_label>Yes</radio_label>
+				<value>yes</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>No</radio_label>
+				<value>no</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>Any</radio_label>
+				<value>any</value>
+				<checked>true</checked>
+			</rbutton>
+		</rbuttons>
+	</input>
+	<input>
+		<id>wishlist_box</id>
+		<type>radio</type>
+		<label>Wishlist:</label>
+		<rbuttons>
+			<rbutton>
+				<radio_label>Yes</radio_label>
+				<value>yes</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>No</radio_label>
+				<value>no</value>
+				<checked>false</checked>
+			</rbutton>
+			<rbutton>
+				<radio_label>Any</radio_label>
+				<value>any</value>
+				<checked>true</checked>
+			</rbutton>
+		</rbuttons>
+	</input>
+</inputs>

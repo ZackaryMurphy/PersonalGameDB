@@ -1,0 +1,126 @@
+body, html {
+	height:100%;
+	margin:0 auto;
+	padding:0;
+}
+
+#container {
+	width:100%;
+	height:100%;
+}
+
+#header {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+	background: #f6f8f9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	color: #262626;
+	text-align:center;
+	padding:1.2em;
+	/*height:5%;*/
+	/*width:100%;*/
+	border-style:ridge;
+	border-width:0.1em;
+	/*position:fixed;*/
+	/*clear:left;*/
+	z-index:5;
+	/*margin:0;*/
+}
+/*
+.spacer {
+	height:10%;
+	width:100%;
+}
+*/
+#selectionSideBar {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d4e4ef+0,86aecc+100;Grey+Gloss */
+	background: #d4e4ef; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d4e4ef 0%, #86aecc 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d4e4ef 0%,#86aecc 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #d4e4ef 0%,#86aecc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=0 ); /* IE6-9 */
+	line-height:1.5em;
+	height:100%;
+	min-height:100%;
+	width:190px;
+	float:left;
+	/*position:absolute;*/
+	padding:1.2em;
+	border-style:ridge;
+	border-width:0.1em;
+	/*overflow:scroll;*/
+	z-index:4
+}
+
+#main {
+	background:lightblue;
+	height:100%;
+	min-height:100%;
+	margin-left: 210px;
+	/*width:84%;*/
+	/*position:absolute;*/
+	padding:1.2em 2em 1.2em 2em;
+	border-style:ridge;
+	border-width:0.1em;
+	/*overflow:scroll;*/
+}
+
+/* Table style generated at tablestyler.com */
+
+.datagrid table { 
+	border-collapse: collapse; 
+	text-align: left; 
+	width: 100%; 
+} 
+
+.datagrid {
+	font: normal 12px/150% Geneva, Arial, Helvetica, sans-serif;
+	background: #fff; 
+	overflow: hidden; 
+	border: 2px solid #8C8C8C; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+}
+
+.datagrid table td, .datagrid table th { 
+	padding: 5px 8px; 
+}
+
+.datagrid table thead th {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D) );
+	background:-moz-linear-gradient( center top, #8C8C8C 5%, #7D7D7D 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8C8C8C', endColorstr='#7D7D7D');
+	background-color:#8C8C8C; 
+	color:#FFFFFF;
+	font-size: 15px; 
+	font-weight: bold; 
+	border-left: 1px solid #A3A3A3; 
+} 
+
+.datagrid table thead th:first-child { 
+	border: none; 
+}
+
+.datagrid table tbody td {
+	color: #7D7D7D; 
+	border-left: 1px solid #DBDBDB;
+	font-size: 13px;
+	border-bottom: 1px solid #DBDBDB;
+	font-weight: normal; 
+}
+
+.datagrid table tbody .alt td { 
+	background: #EBEBEB;
+	color: #7D7D7D; 
+}
+
+.datagrid table tbody td:first-child { 
+	border-left: none; 
+}
+
+.datagrid table tbody tr:last-child td { 
+	border-bottom: none; 
+}
