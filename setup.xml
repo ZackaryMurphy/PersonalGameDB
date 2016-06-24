@@ -87,68 +87,59 @@
 	</input>
 	<input>
 		<id>owned_box</id>
-		<type>radio</type>
+		<type>select</type>
 		<label>Owned:</label>
-		<rbuttons>
-			<rbutton>
-				<radio_label>Yes</radio_label>
-				<value>yes</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>No</radio_label>
-				<value>no</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>Any</radio_label>
-				<value>any</value>
-				<checked>true</checked>
-			</rbutton>
-		</rbuttons>
+		<options>
+			<option>
+				<option_label>Any</option_label>
+				<value>ANY</value>
+			</option>
+			<option>
+				<option_label>Yes</option_label>
+				<value>YES</value>
+			</option>
+			<option>
+				<option_label>No</option_label>
+				<value>NO</value>
+			</option>
+		</options>
 	</input>
 	<input>
 		<id>special_edition_box</id>
-		<type>radio</type>
+		<type>select</type>
 		<label>Special Edition:</label>
-		<rbuttons>
-			<rbutton>
-				<radio_label>Yes</radio_label>
-				<value>yes</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>No</radio_label>
-				<value>no</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>Any</radio_label>
-				<value>any</value>
-				<checked>true</checked>
-			</rbutton>
-		</rbuttons>
+		<options>
+			<option>
+				<option_label>Any</option_label>
+				<value>ANY</value>
+			</option>
+			<option>
+				<option_label>Yes</option_label>
+				<value>YES</value>
+			</option>
+			<option>
+				<option_label>No</option_label>
+				<value>NO</value>
+			</option>
+		</options>
 	</input>
 	<input>
 		<id>wishlist_box</id>
-		<type>radio</type>
+		<type>select</type>
 		<label>Wishlist:</label>
-		<rbuttons>
-			<rbutton>
-				<radio_label>Yes</radio_label>
-				<value>yes</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>No</radio_label>
-				<value>no</value>
-				<checked>false</checked>
-			</rbutton>
-			<rbutton>
-				<radio_label>Any</radio_label>
-				<value>any</value>
-				<checked>true</checked>
-			</rbutton>
-		</rbuttons>
+		<options>
+			<option>
+				<option_label>Any</option_label>
+				<value>ANY</value>
+			</option>
+			<option>
+				<option_label>Yes</option_label>
+				<value>YES</value>
+			</option>
+			<option>
+				<option_label>No</option_label>
+				<value>NO</value>
+			</option>
+		</options>
 	</input>
 </inputs>

@@ -1,4 +1,5 @@
 var db;
+var formHandler;
 
 function DB_Info(cols) {
 	this._columns = cols
@@ -11,6 +12,27 @@ function DB_Info(cols) {
 	}
 	this.getCols = function() {
 		return this._columns;
+	}
+}
+
+function Form_Handler() {
+	this._elementIDs = [];
+	this.addElements = function(id) {
+		if (Array.isArray(id)) {
+			for (var i = 0; i < id.length; i++) {
+				this._elementIDs.push(id[i]);
+			}
+		}
+		else {
+			for (var i = 0; i < arguments.length; i++) {
+				this._elementIDs.push(arguments[i]);
+			}
+		}
+	}
+	this.getAndSetValues = function() {
+		for (var i = 0; i < this._elementIDs.length; i++) {
+			this[this._elementIDs[i]] = $("#"+this._elementIDs[i]).val();
+		}
 	}
 }
 
@@ -43,13 +65,14 @@ function composeInputElement(xmlElement) {
 	var id = $(xmlElement).find('id').text();
 	var type = $(xmlElement).find('type').text();
 	var label = $(xmlElement).find('label').text();
+	formHandler.addElements(id);
 	switch(type) {
 		case "checkbox":
 		case "text":
-			return label + '<br><input id="' + id + '" type="' + type + '" class="zpgdbIn"></input><br><br>';
+			return label + '<br><input id="' + id + '" name="' + id + '" type="' + type + '" class="zpgdbIn"></input><br><br>';
 		case "select":
 			var opts = composeDropdownOptions(xmlElement);
-			return label + '<select id="' + id + '" class="zpgdbIn">' + composeOptionElements(opts) + '</select><br><br>';
+			return label + '<select id="' + id + '" name="' + id + '" class="zpgdbIn">' + composeOptionElements(opts) + '</select><br><br>';
 		case "radio":
 			return label + '<br>' + composeRadioButtons(xmlElement, id, type);
 		default:
@@ -58,13 +81,21 @@ function composeInputElement(xmlElement) {
 }
 
 function prepareSearchButton() {
-	$("#selectionSideBar").append('<button id="findButton" type="button">Find</button>')
+	$("#selectionSideBar").append('<button id="findButton">Find</input>')
 			$("#findButton").click(function() {
 				$("#outTableBody").empty();
+				formHandler.getAndSetValues();
 				$.ajax({
 					type: "GET",
 					url: "index.php",
-					data: {name: "test", cons: "test", release: "test", own: "test", spec: "test", wish: "test"},
+					data: {
+							name: formHandler.name_entry,
+							cons: formHandler.console_entry,
+							release: formHandler.year_entry,
+							own: formHandler.owned_box, 
+							spec: formHandler.special_edition_box, 
+							wish: formHandler.wishlist_box
+							},
 					dataType: "json",
 					success: function(result) {
 						var altCounter = 0;
@@ -85,7 +116,7 @@ function prepareSearchButton() {
 						});
 					},
 					error: function(result) {
-						console.log("Error on query result.");
+						console.log("Error on query result: " + result);
 					}
 				});
 			});
@@ -110,6 +141,7 @@ function prepareOutputTable() {
 
 $(document).ready(function() {
 	db = new DB_Info(["Name", "Console", "Year", "Owned", "Special Edition", "Wishlist", "Comments"])
+	formHandler = new Form_Handler();
 	$.ajax({
 		type: "GET",
 		url: "setup.xml",
