@@ -98,6 +98,7 @@ function prepareSearchButton() {
 							},
 					dataType: "json",
 					success: function(result) {
+						debugger;
 						var altCounter = 0;
 						$.each(result, function(index, value) {
 							var rowObj = JSON.parse(value);
@@ -116,6 +117,7 @@ function prepareSearchButton() {
 						});
 					},
 					error: function(result) {
+						debugger;
 						console.log("Error on query result: " + result);
 					}
 				});

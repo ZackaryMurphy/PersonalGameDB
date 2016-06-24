@@ -13,9 +13,9 @@
 			'Name' => 'name',
 			'Console' => 'console', 
 			'Year' => 'year',
-			'Ownership' => 'own',
-			'Special' => 'spec', 
-			'Wishlist' => 'wish',);
+			'Ownership' => 'owned',
+			'Special' => '\'special edition\'', 
+			'Wishlist' => 'wishlist',);
 		
 		private static $instance;
 		
@@ -82,6 +82,61 @@
 		public function getTableName()
 		{
 			return self::$tablename;
+		}
+		
+		protected function composeWhereClause($name, $console, $release, $own, $spec, $wish) 
+		{
+			$found = false;
+			$whereClause = ' WHERE ';
+			if ($name !== '' && !ctype_space($name)) 
+			{
+				$found = true;
+				$whereClause .= ($this->getNameColumnName() . ' LIKE \'%' . $name . '%\' ');
+			}
+			if ($console !== 'ANY') {
+				if ($found) {
+					$whereClause .= ' AND ';
+				}
+				$found = true;
+				$whereClause .= ($this->getConsoleColumnName() . ' = \'' . $console . '\' ');
+			}
+			if ($release > 0) {
+				if ($found) {
+					$whereClause .= ' AND ';
+				}
+				$found = true;
+				$whereClause .= ($this->getYearColumnName() . ' = ' . $release . ' ');
+			}
+			if ($own !== 'ANY') {
+				if ($found) {
+					$whereClause .= ' AND ';
+				}
+				$found = true;
+				$truthVal = ($own === 'YES') ? 1 : 0;
+				$whereClause .= ($this->getOwnershipColumnName() . ' = (' . $truthVal . ') ');
+			}
+			if ($spec !== 'ANY') {
+				if ($found) {
+					$whereClause .= ' AND '; 
+				}
+				$found = true;
+				$truthVal = ($spec === 'YES') ? 1 : 0;
+				$whereClause .= ($this->getSpecialColumnName() . ' = ' . $truthVal . ' ');
+			}
+			if ($wish !== 'ANY') {
+				if ($found) {
+					$whereClause .= ' AND ';
+				}
+				$found = true;
+				$truthVal = ($spec === 'YES') ? 1 : 0;
+				$whereClause .= ($this->getWishlistColumnName() . ' = ' . $truthVal . ' ');
+			}
+			return $found ? $whereClause : '';
+		}
+		
+		public function composeQuery($name, $console, $release, $own, $spec, $wish) {
+			$queryString = 'SELECT * from ' . self::$tablename . $this->composeWhereClause($name, $console, $release, $own, $spec, $wish);
+			return $queryString;
 		}
 		
 		protected function __construct() 
